@@ -1,0 +1,216 @@
+/* ---fonts--- */
+@font-face {
+  font-family: "regular";
+  src: url("../fonts/RobotoCondensed-Regular.ttf");
+}
+@font-face {
+  font-family: "bold";
+  src: url("../fonts/RobotoCondensed-Bold.ttf");
+}
+/* ---fonts--- */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  color: var(--fontColor);
+  background: linear-gradient(270deg, #22a7ae, #17438e);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 4s ease infinite;
+  -moz-animation: AnimationName 4s ease infinite;
+  animation: AnimationName 4s ease infinite;
+  font-family: "regular", "sans-serif";
+}
+:root {
+  --primaryColor: #ffa500;
+  --secondaryColor: #ffde7d;
+  --hoverColor: #c9b9b1;
+  --fontColor: #06283d;
+  --mainRed: #d72323;
+  --mainBlack: #000;
+  --mainWhite: rgb(244, 236, 236);
+  --mainTransition: all 0.2s;
+  --mainBorderRadius: 8px;
+  --fontColor: rgb(85 85 85);
+}
+/* ---start project--- */
+
+.container {
+  min-width: 53%;
+  margin: 1rem;
+  text-align: center;
+}
+#header {
+  background-color: var(--primaryColor);
+  padding: 1rem 1rem 2rem 1rem;
+  border-radius: var(--mainBorderRadius) var(--mainBorderRadius) 0 0;
+  display: flex;
+  flex-flow: column;
+}
+.header-title {
+  font-family: "bold";
+  font-size: 3.5rem;
+  color: var(--mainWhite);
+}
+#form {
+  display: flex;
+  justify-content: center;
+}
+.text-input,
+.button {
+  padding: 0.8rem;
+  font-size: 2rem;
+}
+.text-input {
+  width: 60%;
+  border-radius: var(--mainBorderRadius) 0 0 var(--mainBorderRadius);
+}
+.button {
+  width: 20%;
+  border-radius: 0 var(--mainBorderRadius) var(--mainBorderRadius) 0;
+  color: var(--fontColor);
+}
+#message {
+  margin: 1rem;
+  font-size: 2rem;
+  animation: arrowUp 1s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+#message::after {
+  content: "\0021E7";
+  color: var(--mainRed);
+  font-size: 4rem;
+  font-weight: bold;
+}
+#task-list {
+  background-color: var(--secondaryColor);
+  border-radius: 0 0 var(--mainBorderRadius) var(--mainBorderRadius);
+  max-height: 30rem;
+  overflow-y: auto;
+}
+#task-list li,
+.button {
+  cursor: pointer;
+  user-select: none;
+}
+#task-list li {
+  text-align: left;
+  padding: 2rem;
+  font-size: 2rem;
+  transition: var(--mainTransition);
+  position: relative;
+}
+#task-list li .close-btn {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  transition: var(--mainTransition);
+}
+#task-list li .close-btn:hover {
+  color: var(--mainRed);
+}
+#task-list li:hover {
+  background-color: var(--hoverColor);
+}
+#task-list li:hover .close-btn {
+  display: inline-block;
+}
+.active {
+  background-color: var(--hoverColor);
+  text-decoration: line-through;
+}
+#task-list li.active::before {
+  content: "";
+  width: 0.6rem;
+  height: 1.5rem;
+  position: absolute;
+  left: 0.5rem;
+  border-color: var(--mainRed);
+  border-width: 0 0.2rem 0.2rem 0;
+  border-style: solid;
+  transform: rotate(45deg);
+}
+/* ---animations--- */
+
+/* body bg */
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  /* body bg end */
+}
+
+/* arrow */
+
+@keyframes arrowUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(1rem);
+  }
+}
+
+/* media query */
+
+@media screen and (max-width: 373px) {
+  .text-input,
+  .button,
+  #task-list li {
+    font-size: 1.6rem;
+  }
+  .text-input,
+  .button {
+    height: 3rem;
+  }
+  .header-title {
+    font-size: 2.5rem;
+  }
+  #message {
+    font-size: 1.4rem;
+  }
+  #message::after {
+    font-size: 3rem;
+  }
+  #task-list li.active::before{
+    height: 1.3rem;
+    left: .6rem;
+  }
+}
