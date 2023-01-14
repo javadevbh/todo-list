@@ -4,7 +4,7 @@
 
 ---
 # to-do list
-## [review online](https://javadbahrami-todo-list.netlify.app/)
+## [review online](https://javadevbh.github.io/todo-list/)
 ---
 ## tips
 * Save information and tasks in local storage
@@ -18,5 +18,5 @@
 ## contact me
 * *[Email](mailto:javadev14bh@gmail.com)*
 * *[Telegram](https://t.me/LjvdL/)*
-* *[Instagram](https://instagram.com/javad_bh/)*
+* *[Instagram](https://instagram.com/jvd_bh/)*
 * *[LinkedIn](https://www.linkedin.com/in/javad-bahrami-79b349259/)*
