@@ -13,7 +13,7 @@
 ## web development technologies
 * HTML
 * CSS (css pure + flex box + css grid)
-* Java script pure
+* Vanilla js
 ---
 ## contact me
 * *[Email](mailto:javadev14bh@gmail.com)*
